@@ -73,8 +73,13 @@ with col2:
 
 # Pregunta de análisis: ¿influye el precio en la valoración?
 st.subheader("¿Los libros más caros tienen mejor valoración?")
-precio_por_rating = df.groupby("rating")["precio"].mean()
-st.bar_chart(precio_por_rating, x_label="Estrellas", y_label="Precio medio (£)")
+col3, col4 = st.columns(2)
+with col3:
+    # Cada punto es un libro: si hubiera relación, los puntos formarían una diagonal
+    st.scatter_chart(df, x="precio", y="rating", x_label="Precio (£)", y_label="Estrellas")
+with col4:
+    precio_por_rating = df.groupby("rating")["precio"].mean()
+    st.bar_chart(precio_por_rating, x_label="Estrellas", y_label="Precio medio (£)")
 
 correlacion = df["precio"].corr(df["rating"])
 if pd.isna(correlacion) or abs(correlacion) < 0.1:
@@ -85,8 +90,18 @@ else:
     conclusion = "Hay una relación negativa: los libros caros tienden a tener peor valoración."
 st.info(f"Correlación precio-rating: **{correlacion:.2f}**. {conclusion}")
 
-# Gráfico con el segundo CSV: categorías más grandes
-st.subheader("Top 10 categorías con más libros")
+# Cruce de datos: ¿qué categorías están mejor valoradas? (respeta los filtros)
+st.subheader("¿Qué categorías tienen mejor valoración?")
+st.caption("Solo categorías con 5 libros o más, para que la media sea fiable.")
+por_cat = df.groupby("categoria").agg(libros=("titulo", "count"), rating_medio=("rating", "mean"))
+por_cat = por_cat[por_cat["libros"] >= 5].sort_values("rating_medio", ascending=False)
+if por_cat.empty:
+    st.write("Con estos filtros ninguna categoría tiene 5 libros o más.")
+else:
+    st.bar_chart(por_cat["rating_medio"], x_label="Categoría", y_label="Rating medio")
+
+# Gráfico con el segundo CSV (catálogo completo, no depende de los filtros)
+st.subheader("Top 10 categorías con más libros (catálogo completo)")
 top = categorias.sort_values("num_libros", ascending=False).head(10)
 st.bar_chart(top, x="categoria", y="num_libros", x_label="Categoría", y_label="Nº de libros", horizontal=True)
 st.dataframe(top, hide_index=True)

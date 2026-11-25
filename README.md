@@ -48,6 +48,8 @@ streamlit run app.py     # abre el dashboard en el navegador
 ## Conclusiones del análisis
 
 - La correlación entre precio y rating es **0.03**: el precio **no** influye en la valoración.
+- En el gráfico de dispersión los puntos no forman ninguna diagonal, lo que confirma que no hay relación.
+- Mejor valoradas (con 5 libros o más): Christian Fiction (4,17), Art (3,63) y Poetry (3,53). Peor valorada: Psychology (1,71).
 - Los precios están repartidos de forma bastante uniforme entre £10 y £60.
 - Las categorías más grandes son "Default" (152) y "Nonfiction" (110). "Default" y "Add a comment" no son géneros reales: son categorías de relleno de la propia web.
 - 11 categorías tienen solo 1 o 2 libros, así que sus medias no son fiables.
