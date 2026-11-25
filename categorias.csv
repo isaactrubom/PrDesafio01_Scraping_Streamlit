@@ -1,0 +1,51 @@
+categoria,num_libros,precio_medio,rating_medio
+Academic,1,13.12,2.0
+Add a comment,67,35.8,2.76
+Adult Fiction,1,15.36,5.0
+Art,8,38.52,3.62
+Autobiography,9,37.05,3.0
+Biography,5,33.66,2.2
+Business,12,32.46,2.92
+Childrens,29,32.64,2.62
+Christian,3,42.5,2.67
+Christian Fiction,6,34.38,4.17
+Classics,19,36.55,2.47
+Contemporary,3,36.2,2.33
+Crime,1,10.97,1.0
+Cultural,1,36.58,1.0
+Default,152,34.39,2.84
+Erotica,1,19.19,5.0
+Fantasy,48,39.59,3.08
+Fiction,65,36.07,3.18
+Food and Drink,30,31.41,2.9
+Health,4,51.45,3.75
+Historical,2,22.83,3.0
+Historical Fiction,26,33.64,3.23
+History,18,37.29,2.94
+Horror,17,35.95,2.71
+Humor,10,33.5,3.4
+Music,13,35.64,3.15
+Mystery,32,31.72,2.94
+New Adult,6,46.38,3.17
+Nonfiction,110,34.26,2.88
+Novels,1,54.81,5.0
+Paranormal,1,15.4,1.0
+Parenting,1,37.35,2.0
+Philosophy,11,33.56,2.36
+Poetry,19,35.97,3.53
+Politics,3,53.61,2.33
+Psychology,7,34.22,1.71
+Religion,7,32.57,3.14
+Romance,35,33.93,2.63
+Science,14,33.09,2.93
+Science Fiction,16,33.8,2.25
+Self Help,5,40.62,2.6
+Sequential Art,75,34.57,2.97
+Short Stories,1,35.88,1.0
+Spirituality,6,35.1,3.33
+Sports and Games,5,41.17,3.0
+Suspense,1,58.33,3.0
+Thriller,11,31.43,2.73
+Travel,11,39.79,2.73
+Womens Fiction,17,36.79,3.12
+Young Adult,54,35.45,3.3
